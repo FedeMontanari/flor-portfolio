@@ -26,6 +26,10 @@ const navItems = [
     name: "Contacto",
     href: "/contact",
   },
+  {
+    name: "Subir Foto",
+    href: "/upload",
+  },
 ];
 
 export default function Navbar() {
@@ -37,7 +41,9 @@ export default function Navbar() {
             return (
               <NavigationMenuItem key={i}>
                 <Link href={n.href} legacyBehavior passHref>
-                  <NavigationMenuLink className={`${navigationMenuTriggerStyle()} bg-fourth`}>
+                  <NavigationMenuLink
+                    className={`${navigationMenuTriggerStyle()} bg-fourth`}
+                  >
                     {n.name}
                   </NavigationMenuLink>
                 </Link>
