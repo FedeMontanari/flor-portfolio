@@ -8,6 +8,9 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import Image from "next/image";
+
+import logo from "../assets/logo/negro.png";
 
 const navItems = [
   {
@@ -15,16 +18,16 @@ const navItems = [
     href: "/",
   },
   {
-    name: "Mis Trabajos",
-    href: "/mywork",
+    name: "Albums",
+    href: "/albums",
   },
   {
     name: "Sobre Mi",
-    href: "/aboutme",
+    href: "/sobremi",
   },
   {
     name: "Contacto",
-    href: "/contact",
+    href: "/contacto",
   },
   {
     name: "Subir Foto",
@@ -34,7 +37,10 @@ const navItems = [
 
 export default function Navbar() {
   return (
-    <div className="static h-20 w-fit flex justify-around bg-sixth m-auto px-3 rounded-lg mt-4">
+    <div className="flex flex-row w-screen flex-nowrap justify-between items-center bg-third">
+      <Link href="/">
+        <Image src={logo} alt="Logo" width={240} className="p-3" />
+      </Link>
       <NavigationMenu>
         <NavigationMenuList>
           {navItems.map((n, i) => {
@@ -42,7 +48,7 @@ export default function Navbar() {
               <NavigationMenuItem key={i}>
                 <Link href={n.href} legacyBehavior passHref>
                   <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} bg-fourth`}
+                    className={`${navigationMenuTriggerStyle()} bg-inherit`}
                   >
                     {n.name}
                   </NavigationMenuLink>

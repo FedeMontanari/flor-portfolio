@@ -11,7 +11,41 @@
   6th: 334.62 51.18% 49.8%
 */
 
+/* 
+  21.72 23.77% 47.84%
+  21.92 72.22% 71.75%
+  22.15 73.03% 82.55%
+  201.33 22.61% 60.98%
+  201.11 23.08% 45.88%
+  201.67 22.78% 30.98%
+*/
+
 /* Custom pink */
+
+/* @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 21.92 72.22% 71.75%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 22.15 73.03% 82.55%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 21.92 72.22% 71.75%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 22.15 73.03% 82.55%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 201.67 22.78% 30.98%;
+    --input: 21.72 23.77% 47.84%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+} */
 
 @layer base {
   :root {
@@ -21,56 +55,36 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 14.72 51.46% 79.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 335.09 51.46% 79.8%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 14.72 51.46% 79.8%;
+    --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 335.09 51.46% 79.8%;
+    --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 334.62 51.18% 49.8%;
-    --input: 14.77 51.18% 49.8%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    --first: 14.77 51.18% 49.8%;
+    /* --first: 14.77 51.18% 49.8%;
     --second: 14.72 51.46% 79.8%;
     --third: 10.91 52.38% 95.88%;
     --fourth: 338.18 52.38% 95.88%;
     --fifth: 335.09 51.46% 79.8%;
-    --sixth: 334.62 51.18% 49.8%;
+    --sixth: 334.62 51.18% 49.8%; */
+
+    --first: 21.72 23.77% 47.84%;
+    --second: 21.92 72.22% 71.75%;
+    --third: 22.15 73.03% 82.55%;
+    --fourth: 201.33 22.61% 60.98%;
+    --fifth: 201.11 23.08% 45.88%;
+    --sixth: 201.67 22.78% 30.98%;
   }
 }
-
-/* Shadcn pink */
-
-/* @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 346.8 77.2% 49.8%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 346.8 77.2% 49.8%;
-    --radius: 1rem;
-  }
-} */
 
 @layer base {
   * {
@@ -82,7 +96,7 @@
 }
 
 body {
-  background-image: url("../assets/images/background.jpeg");
+  background-image: url("../assets/images/background3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
