@@ -1,4 +1,14 @@
 import Image from "next/image";
+import heroHighlight from "../assets/images/hero-highlight-alt.svg";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 interface UnsplashResponse {
   id: string;
@@ -26,22 +36,39 @@ async function getPictures() {
 export default async function Home() {
   const pictures = await getPictures();
   return (
-    <main className="flex min-h-screen flex-col items-center px-10">
-      <div className="bg-white">
-        <h2 className="font-bold text-3xl">
-          Bienvenid@s a mi portfolio y fotogalería
+    <main className="flex min-h-screen flex-col items-center">
+      <div className="w-full h-64 -mt-12 flex justify-center items-center">
+        <Image
+          src={heroHighlight}
+          alt="Hero Title Highlight"
+          className="absolute h-56"
+        />
+        <h2 className="font-bold text-5xl z-10">
+          Portfolio
+          <br />
+          Fotogaleria
         </h2>
       </div>
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-4 gap-3 pb-12">
         {pictures?.map((pic: UnsplashResponse) => {
           return (
-            <Image
+            <Card
               key={pic.id}
-              src={pic.urls.regular}
-              alt={pic.alt_description}
-              width={1920}
-              height={1080}
-            />
+              className="size-80"
+              style={{
+                backgroundImage: `url(${pic.urls.regular})`,
+                backgroundSize: "cover",
+              }}
+            >
+              {/* <CardContent>
+                <Image
+                  src={pic.urls.regular}
+                  alt={pic.alt_description}
+                  width={1920}
+                  height={1080}
+                />
+              </CardContent> */}
+            </Card>
           );
         })}
       </div>

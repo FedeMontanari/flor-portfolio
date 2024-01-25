@@ -37,7 +37,7 @@ const navItems = [
 
 export default function Navbar() {
   return (
-    <div className="flex flex-row w-screen flex-nowrap justify-between items-center bg-third">
+    <div className="flex flex-row w-full flex-nowrap justify-between items-center bg-third pr-3">
       <Link href="/">
         <Image src={logo} alt="Logo" width={240} className="p-3" />
       </Link>
