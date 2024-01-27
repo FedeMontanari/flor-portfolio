@@ -31,12 +31,6 @@ const prisma = new PrismaClient();
 
 export default async function Home() {
   const pictures = await getPictures();
-  const newUser = await prisma.user.create({
-    data: {
-      name: "admin",
-      password: "admin",
-    },
-  });
   return (
     <main className="flex min-h-screen flex-col items-center">
       <div className="w-full h-64 -mt-12 flex justify-center items-center">
