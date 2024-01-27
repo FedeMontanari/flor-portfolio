@@ -29,10 +29,10 @@ const navItems = [
     name: "Contacto",
     href: "/contacto",
   },
-  {
-    name: "Subir Foto",
-    href: "/upload",
-  },
+  // {
+  //   name: "Subir Foto",
+  //   href: "/upload",
+  // },
 ];
 
 export default function Navbar() {

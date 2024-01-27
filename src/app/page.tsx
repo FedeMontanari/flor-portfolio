@@ -1,6 +1,5 @@
 import Image from "next/image";
 import heroHighlight from "../assets/images/hero-highlight-alt.svg";
-import { PrismaClient } from "@prisma/client";
 
 import { Card } from "@/components/ui/card";
 
@@ -26,8 +25,6 @@ async function getPictures() {
   });
   return res.json();
 }
-
-const prisma = new PrismaClient();
 
 export default async function Home() {
   const pictures = await getPictures();
