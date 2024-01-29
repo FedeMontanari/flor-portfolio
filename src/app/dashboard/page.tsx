@@ -2,6 +2,7 @@ import React from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AboutmeForm from "@/components/AboutmeForm";
+import ContactForm from "@/components/ContactForm";
 
 export default function Dashboard() {
   return (
@@ -19,7 +20,9 @@ export default function Dashboard() {
           <TabsContent value="aboutme">
             <AboutmeForm />
           </TabsContent>
-          <TabsContent value="contact">Editar sección Contacto</TabsContent>
+          <TabsContent value="contact">
+            <ContactForm />
+          </TabsContent>
         </Tabs>
       </div>
     </div>
