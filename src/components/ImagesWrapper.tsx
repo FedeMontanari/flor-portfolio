@@ -1,34 +1,29 @@
 "use client";
 
-import { storage } from "@/lib/firebase";
-import {
-  StorageReference,
-  getDownloadURL,
-  listAll,
-  ref,
-} from "firebase/storage";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Card } from "./ui/card";
+import fetchPictures from "@/lib/fetchPictures";
 
-const fetchPictures = async () => {
-  const items = (await listAll(ref(storage, "images/"))).items;
-  return items;
-};
+export default function ImagesWrapper({ path, ...props }: { path: string }) {
+  const [items, setItems] = useState<string[]>([]);
 
-export default function ImagesWrapper() {
-  const [items, setItems] = useState<StorageReference[]>([]);
   useEffect(() => {
     (async () => {
-      const items = await fetchPictures();
+      const items = await fetchPictures(path);
       setItems(items);
     })();
   }, []);
+
   return (
     <div className="flex flex-col justify-center items-center gap-4 pb-5">
-      {items.map(async (it, i) => {
-        const url = await getDownloadURL(it);
+      {items.map(async (url, i) => {
+        // <Image src={url} alt="Picture" key={i} />;
         return (
-          <Image src={url} alt="Pet image" width={480} height={480} key={i} />
+          <Card
+            key={i}
+            className="size-80"
+            style={{ backgroundImage: `url(${url})`, backgroundSize: "cover" }}
+          ></Card>
         );
       })}
     </div>

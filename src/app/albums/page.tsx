@@ -14,27 +14,27 @@ import Link from "next/link";
 const categories = [
   {
     name: "Moda",
-    href: "fashion",
+    href: "moda",
   },
   {
     name: "Deportes",
-    href: "sports",
+    href: "deportes",
   },
   {
     name: "Fotoproductos",
-    href: "products",
+    href: "fotoproductos",
   },
   {
     name: "Retratos",
-    href: "portraits",
+    href: "retratos",
   },
   {
     name: "Gastronomía",
-    href: "gastronomy",
+    href: "gastronomia",
   },
 ];
 
-export default function MyWork() {
+export default function Albums() {
   return (
     <div className="flex items-center justify-center flex-wrap gap-5 pb-7">
       {/* <Suspense fallback={<div>Cargando...</div>}>

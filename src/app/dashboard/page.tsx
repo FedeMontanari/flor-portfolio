@@ -1,8 +1,7 @@
 import React from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import AboutmeForm from "@/components/AboutmeForm";
-import ContactForm from "@/components/ContactForm";
+import UploadPicture from "@/components/UploadPicture";
 
 export default function Dashboard() {
   return (
@@ -11,17 +10,9 @@ export default function Dashboard() {
         <Tabs defaultValue="pictures" className="w-[400px]">
           <TabsList>
             <TabsTrigger value="pictures">Fotos</TabsTrigger>
-            <TabsTrigger value="aboutme">Sobre Mi</TabsTrigger>
-            <TabsTrigger value="contact">Contacto</TabsTrigger>
           </TabsList>
           <TabsContent value="pictures">
-            <h4>Editar sección Albums</h4>
-          </TabsContent>
-          <TabsContent value="aboutme">
-            <AboutmeForm />
-          </TabsContent>
-          <TabsContent value="contact">
-            <ContactForm />
+            <UploadPicture />
           </TabsContent>
         </Tabs>
       </div>
