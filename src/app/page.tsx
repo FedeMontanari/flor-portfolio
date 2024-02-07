@@ -1,13 +1,13 @@
 import Image from "next/image";
-import heroHighlight from "../assets/images/hero-highlight-alt.svg";
+import heroHighlight from "@/assets/images/hero-highlight-alt.svg";
 import fetchPictures from "@/lib/fetchPictures";
 import { Card } from "@/components/ui/card";
 
 export default async function Home() {
   const imgUrls = await fetchPictures("highlights");
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <div className="w-full h-64 -mt-12 flex justify-center items-center">
+    <main className="flex flex-col items-center">
+      <div className="w-screen h-64 -mt-12 flex justify-center items-center hero-container">
         <Image
           src={heroHighlight}
           alt="Hero Title Highlight"
@@ -19,7 +19,7 @@ export default async function Home() {
           Fotogaleria
         </h2>
       </div>
-      <div className="grid grid-cols-1 gap-3 pb-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
         {imgUrls.map((url, i) => {
           return (
             <Card

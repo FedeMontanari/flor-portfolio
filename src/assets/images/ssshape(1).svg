@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 600 600" opacity="1">
+    <path d="M129.97381591796875,413.0889892578125C66.23035939534506,372.7748540242513,56.41360982259115,228.01045989990234,116.62303161621094,194.76438903808594C176.83245340983072,161.51831817626953,427.4868901570638,173.29842885335287,491.2303466796875,213.61256408691406C554.9738032023112,253.92669932047525,559.2931925455729,403.4031295776367,499.0837707519531,436.6492004394531C438.8743489583333,469.89527130126953,193.71727244059244,453.4031244913737,129.97381591796875,413.0889892578125C66.23035939534506,372.7748540242513,56.41360982259115,228.01045989990234,116.62303161621094,194.76438903808594" fill="url(&quot;#SvgjsRadialGradient1001&quot;)" transform="matrix(1.1547309375,0,0,1.1547309375,-56.90606392574074,-63.66137910650258)" fill-opacity="1" stroke-width="0" stroke="hsl(340, 45%, 30%)" stroke-opacity="0.05"></path>
+    <defs>
+        <linearGradient id="SvgjsLinearGradient1000" gradientTransform="rotate(317, 0.5, 0.5)">
+            <stop stop-color="hsl(340, 45%, 50%)" offset="0"></stop>
+            <stop stop-color="hsl(340, 45%, 80%)" offset="1"></stop>
+        </linearGradient>
+        <radialGradient id="SvgjsRadialGradient1001" r="1.2">
+            <stop stop-color="hsl(21.92 72.22% 71.75%)" offset="0"></stop>
+            <stop stop-color="hsl(22.15 73.03% 82.55%)" offset="1"></stop>
+        </radialGradient>
+    </defs>
+</svg>

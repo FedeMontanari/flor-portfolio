@@ -96,13 +96,20 @@
 }
 
 body {
-  background-image: url("../assets/images/background3.jpg");
+  background: linear-gradient(
+      rgba(93, 118, 152, 1) 40%,
+      rgba(93, 118, 152, 0.3) 100%
+    ),
+    url("../assets/images/background3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-body {
-  background: linear-gradient(rgba(93, 118, 152, 0.3) 0%, rgba(93, 118, 152, 1) 100%),
+.hero-container {
+  background: linear-gradient(
+      rgba(93, 118, 152, 0.2) 0%,
+      rgba(93, 118, 152, 1) 100%
+    ),
     url("../assets/images/hero-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
