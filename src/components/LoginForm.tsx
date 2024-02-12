@@ -52,12 +52,24 @@ export default function LoginForm({
   const router = useRouter();
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const res = await fetch("/api/users/login", {
+    const res = await fetch("/api/login", {
       method: "post",
       body: JSON.stringify(values),
     });
-    if (res.status == 200) {
-      router.replace("/dashboard");
+    switch (res.status) {
+      case 200:
+        alert("Bienvenido!");
+        router.replace("/dashboard");
+        break;
+      case 401:
+        alert("Credenciales Incorrectas");
+        break;
+      case 500:
+        alert("Error del servidor");
+        break;
+
+      default:
+        break;
     }
   }
 
@@ -84,7 +96,11 @@ export default function LoginForm({
             <FormItem>
               <FormLabel>Contraseña</FormLabel>
               <FormControl>
-                <Input placeholder="Ingrese su contraseña" {...field} />
+                <Input
+                  type="password"
+                  placeholder="Ingrese su contraseña"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
