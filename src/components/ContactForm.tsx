@@ -58,10 +58,6 @@ export default function ContactForm() {
       });
   }, []);
 
-  useEffect(() => {
-    console.log(contact);
-  }, [contact]);
-
   function onInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     setContact({
       ...contact,
