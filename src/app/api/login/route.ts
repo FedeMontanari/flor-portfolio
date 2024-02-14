@@ -1,4 +1,7 @@
 import { PrismaClient } from "@prisma/client";
+const jwt = require("jsonwebtoken");
+
+const { JWT_KEY } = process.env;
 
 const prisma = new PrismaClient();
 
@@ -20,8 +23,9 @@ export async function POST(req: Request) {
         }
       );
     }
+    const token = jwt.sign(user, JWT_KEY);
     return Response.json(
-      { message: "Login successful" },
+      { message: "Login successful", token },
       {
         status: 200,
       }

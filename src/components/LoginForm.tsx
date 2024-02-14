@@ -56,9 +56,10 @@ export default function LoginForm({
       method: "post",
       body: JSON.stringify(values),
     });
+    const response = await res.json();
     switch (res.status) {
       case 200:
-        alert("Bienvenido!");
+        document.cookie = `jwtToken=${response.token}`;
         router.replace("/dashboard");
         break;
       case 401:
