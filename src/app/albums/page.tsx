@@ -4,9 +4,6 @@ import Link from "next/link";
 
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -34,16 +31,14 @@ const categories = [
   },
 ];
 
+// Subpage add title and Arsenica font (lowecase)
+
 export default function Albums() {
   return (
     <div className="flex flex-col items-center">
       <div className="w-screen h-64 -mt-12 flex justify-center items-center hero-container">
-        <Image
-          src={heroHighlight}
-          alt="Hero Title Highlight"
-          className="absolute h-60"
-        />
-        <h2 className="font-bold text-5xl z-10 text-center">
+        <h2 className="font-bold text-5xl z-10 text-center text-white">
+          {/* Cambiar Fuente */}
           Mis
           <br />
           Trabajos
@@ -57,13 +52,10 @@ export default function Albums() {
               className="border-none bg-second hover:bg-third transition"
             >
               <Link href={`albums/${cat.href}`}>
+                {/* Centrar Titulo */}
                 <CardHeader>
                   <CardTitle>{cat.name}</CardTitle>
-                  <CardDescription>Descripción Categoria</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p>Contenido de Categoria</p>
-                </CardContent>
               </Link>
             </Card>
           );

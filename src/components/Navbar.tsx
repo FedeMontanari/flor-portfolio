@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 
-import logo from "../assets/logo/negro.png";
+import logo from "@/assets/logo/negro.png";
 
 const navItems = [
   {
@@ -35,14 +35,16 @@ const navItems = [
   // },
 ];
 
+// Add dashboard when logged in
+
 export default function Navbar() {
   return (
     <div className="flex flex-row w-full flex-nowrap justify-between items-center bg-third pr-3">
-      <Link href="/">
+      {/* <Link href="/">
         <Image src={logo} alt="Logo" width={240} className="p-3" />
-      </Link>
+      </Link> */}
       <NavigationMenu>
-        <NavigationMenuList>
+        <NavigationMenuList className="flex flex-row items-center justify-center text-center">
           {navItems.map((n, i) => {
             return (
               <NavigationMenuItem key={i}>
