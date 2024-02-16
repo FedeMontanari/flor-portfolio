@@ -8,9 +8,22 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import Image from "next/image";
-
-import logo from "@/assets/logo/negro.png";
+import { MouseEvent, useEffect, useState } from "react";
+import getCookie from "@/utils/getCookie";
+import validateToken from "@/utils/validateToken";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogContent,
+  AlertDialogTrigger,
+} from "./ui/alert-dialog";
+import { AlertCircle } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 
 const navItems = [
   {
@@ -35,16 +48,40 @@ const navItems = [
   // },
 ];
 
-// Add dashboard when logged in
+function useForceUpdate() {
+  let [value, setState] = useState(true);
+  return () => setState(!value);
+}
 
 export default function Navbar() {
+  const [authenticated, setAuthenticated] = useState<boolean>(false);
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const handleForceUpdate = useForceUpdate();
+
+  useEffect(() => {
+    const token = getCookie("jwtToken");
+    (async () => {
+      setAuthenticated(await validateToken({ token }));
+    })();
+  }, []);
+
+  useEffect(() => {
+    handleForceUpdate();
+  }, [pathname]);
+
+  function logoutHandler(e: MouseEvent<HTMLButtonElement>) {
+    document.cookie = `jwtToken=""  `;
+    router.replace("/");
+    setAuthenticated(false);
+    handleForceUpdate();
+  }
+
   return (
-    <div className="flex flex-row w-full flex-nowrap justify-between items-center bg-third pr-3">
-      {/* <Link href="/">
-        <Image src={logo} alt="Logo" width={240} className="p-3" />
-      </Link> */}
+    <div className="flex w-full items-center justify-center bg-third">
       <NavigationMenu>
-        <NavigationMenuList className="flex flex-row items-center justify-center text-center">
+        <NavigationMenuList>
           {navItems.map((n, i) => {
             return (
               <NavigationMenuItem key={i}>
@@ -58,6 +95,50 @@ export default function Navbar() {
               </NavigationMenuItem>
             );
           })}
+          {authenticated ? (
+            <>
+              <NavigationMenuItem>
+                <Link href="/dashboard" legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={`${navigationMenuTriggerStyle()} bg-inherit`}
+                  >
+                    Panel de Control
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <AlertDialog>
+                  <AlertDialogTrigger>
+                    <NavigationMenuLink
+                      className={`${navigationMenuTriggerStyle()} cursor-pointer bg-destructive`}
+                    >
+                      Cerrar Sesion
+                    </NavigationMenuLink>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>
+                        <AlertCircle className="inline text-destructive" />{" "}
+                        Desea cerrar sesión?
+                      </AlertDialogTitle>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                      <AlertDialogAction
+                        onClick={logoutHandler}
+                        className="bg-destructive"
+                      >
+                        Aceptar
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+              </NavigationMenuItem>
+            </>
+          ) : (
+            <></>
+          )}
         </NavigationMenuList>
       </NavigationMenu>
     </div>

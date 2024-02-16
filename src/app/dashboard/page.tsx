@@ -1,40 +1,39 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import UploadPicture from "@/components/UploadPicture";
-import validateToken from "@/lib/validateToken";
+import validateToken from "@/utils/validateToken";
 import { useRouter } from "next/navigation";
-import getCookie from "@/lib/getCookie";
+import getCookie from "@/utils/getCookie";
 import DeletePicture from "@/components/DeletePicture";
 import { LoaderIcon } from "lucide-react";
 
 export default function Dashboard() {
-  const [authenticated, setAuthenticated] = useState<boolean>(true);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [authenticated, setAuthenticated] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
 
   useEffect(() => {
     const token = getCookie("jwtToken");
-    setLoading(true);
     (async () => {
       setAuthenticated(await validateToken({ token }));
-      setLoading(!authenticated);
+      setLoading(false);
     })();
   }, []);
 
   useEffect(() => {
-    if (!authenticated) {
+    if (!authenticated && !loading) {
       router.replace("/login");
     }
-  }, [authenticated, router]);
+  }, [authenticated, loading, router]);
 
   return (
     <>
       {!loading ? (
-        <div className="flex justify-center items-center">
-          <div className="w-max bg-second p-6 rounded-md border-2">
+        <div className="mt-12 flex items-center justify-center">
+          <div className="w-max rounded-md border-2 bg-second p-6">
             <Tabs defaultValue="upload" className="w-[400px]">
               <TabsList>
                 <TabsTrigger value="upload">Cargar</TabsTrigger>
@@ -50,9 +49,9 @@ export default function Dashboard() {
           </div>
         </div>
       ) : (
-        <div className="flex justify-center items-center">
+        <div className="flex items-center justify-center">
           <span>
-            <LoaderIcon className="animate-spin inline" />
+            <LoaderIcon className="inline animate-spin" />
             Cargando...
           </span>
         </div>

@@ -20,7 +20,7 @@ export async function POST(req: Request) {
         { error: "Incorrect credentials" },
         {
           status: 401,
-        }
+        },
       );
     }
     const token = jwt.sign(user, JWT_KEY);
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
       { message: "Login successful", token },
       {
         status: 200,
-      }
+      },
     );
   } catch (error) {
     console.error(error);
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
       { error },
       {
         status: 500,
-      }
+      },
     );
   }
 }

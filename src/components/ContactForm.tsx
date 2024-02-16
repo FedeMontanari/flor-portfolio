@@ -75,7 +75,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center gap-2">
+    <div className="flex flex-col items-center justify-center gap-2">
       <Table className="pt-3">
         <TableHeader>
           <TableRow>

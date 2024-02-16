@@ -1,12 +1,6 @@
-import heroHighlight from "@/assets/images/hero-highlight-alt.svg";
-import Image from "next/image";
 import Link from "next/link";
 
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 const categories = [
   {
@@ -35,13 +29,12 @@ const categories = [
 
 export default function Albums() {
   return (
-    <div className="flex flex-col items-center">
-      <div className="w-screen h-64 -mt-12 flex justify-center items-center hero-container">
-        <h2 className="font-bold text-5xl z-10 text-center text-white">
-          {/* Cambiar Fuente */}
-          Mis
+    <div className="flex flex-col items-center justify-center">
+      <div className="-mt-12 flex h-64 w-screen items-center justify-center">
+        <h2 className="z-10 text-center text-5xl font-bold text-white">
+          <span className="font-poppins">MIS</span>
           <br />
-          Trabajos
+          <span className="font-arsenica">trabajos</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -49,12 +42,11 @@ export default function Albums() {
           return (
             <Card
               key={i}
-              className="border-none bg-second hover:bg-third transition"
+              className="border-none bg-second transition duration-500 hover:bg-third"
             >
               <Link href={`albums/${cat.href}`}>
-                {/* Centrar Titulo */}
                 <CardHeader>
-                  <CardTitle>{cat.name}</CardTitle>
+                  <CardTitle className="text-center">{cat.name}</CardTitle>
                 </CardHeader>
               </Link>
             </Card>

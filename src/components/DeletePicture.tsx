@@ -1,6 +1,6 @@
 "use client";
 
-import { MouseEvent, Suspense, useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import {
   ref,
   listAll,
@@ -107,10 +107,10 @@ export default function DeletePicture() {
 
   return (
     <div className="flex flex-col items-center justify-around">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center py-5">
+      <h1 className="scroll-m-20 py-5 text-center text-4xl font-extrabold tracking-tight lg:text-5xl">
         Eliminar Imagen
       </h1>
-      <div className="w-fit h-fit p-5 flex flex-col items-center rounded-md gap-5">
+      <div className="flex h-fit w-fit flex-col items-center gap-5 rounded-md p-5">
         <>
           <Select onValueChange={selectChangeHandler}>
             <SelectTrigger>
@@ -128,7 +128,7 @@ export default function DeletePicture() {
           </Select>
           {catLoading ? (
             <div className="flex flex-row items-center justify-center">
-              <Loader2 className="animate-spin inline mr-1" /> Cargando
+              <Loader2 className="mr-1 inline animate-spin" /> Cargando
             </div>
           ) : (
             <>
@@ -139,7 +139,7 @@ export default function DeletePicture() {
                       <AlertDialog key={i}>
                         <AlertDialogTrigger>
                           <Card
-                            className="size-40 transition-transform duration-500 hover:scale-110 hover:shadow-lg hover:shadow-destructive border-destructive hover:border-2 hover:cursor-pointer"
+                            className="size-40 border-destructive transition-transform duration-500 hover:scale-110 hover:cursor-pointer hover:border-2 hover:shadow-lg hover:shadow-destructive"
                             style={{
                               backgroundImage: `url(${url})`,
                               backgroundSize: "cover",

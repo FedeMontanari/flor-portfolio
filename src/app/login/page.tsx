@@ -1,8 +1,8 @@
 "use client";
 
 import LoginForm from "@/components/LoginForm";
-import getCookie from "@/lib/getCookie";
-import validateToken from "@/lib/validateToken";
+import getCookie from "@/utils/getCookie";
+import validateToken from "@/utils/validateToken";
 import { LoaderIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -30,16 +30,16 @@ export default function Login() {
   return (
     <>
       {loading ? (
-        <div className="w-full h-full flex justify-center items-center">
+        <div className="flex h-full w-full items-center justify-center">
           <span>
             <LoaderIcon className="inline animate-spin" />
             Cargando...
           </span>
         </div>
       ) : (
-        <div className="w-full h-full flex justify-center items-center flex-col gap-5">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-5">
           <h3 className="text-3xl">Iniciar Sesión</h3>
-          <LoginForm className="bg-second p-4 rounded-md w-72" />
+          <LoginForm className="w-72 rounded-md bg-second p-4" />
         </div>
       )}
     </>

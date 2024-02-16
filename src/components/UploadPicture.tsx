@@ -86,13 +86,13 @@ export default function UploadPicture() {
 
   return (
     <div className="flex flex-col items-center justify-around">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center py-5">
+      <h1 className="scroll-m-20 py-5 text-center text-4xl font-extrabold tracking-tight lg:text-5xl">
         Cargar Imagen
       </h1>
-      <div className="w-fit h-fit p-5 flex flex-col items-center rounded-md gap-5">
+      <div className="flex h-fit w-fit flex-col items-center gap-5 rounded-md p-5">
         {loading ? (
           <div className="flex flex-row items-center justify-center">
-            <Loader2 className="animate-spin inline mr-1" /> Cargando
+            <Loader2 className="mr-1 inline animate-spin" /> Cargando
           </div>
         ) : (
           <>

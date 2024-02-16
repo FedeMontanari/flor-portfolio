@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Card } from "./ui/card";
-import fetchPictures from "@/lib/fetchPictures";
+import fetchPictures from "@/utils/fetchPictures";
 
 export default function ImagesWrapper({ path, ...props }: { path: string }) {
   const [items, setItems] = useState<string[]>([]);
@@ -15,7 +15,7 @@ export default function ImagesWrapper({ path, ...props }: { path: string }) {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center gap-4 pb-5">
+    <div className="flex flex-col items-center justify-center gap-4 pb-5">
       {items.map(async (url, i) => {
         // <Image src={url} alt="Picture" key={i} />;
         return (
