@@ -25,8 +25,6 @@ const categories = [
   },
 ];
 
-// Subpage add title and Arsenica font (lowecase)
-
 export default function Albums() {
   return (
     <div className="flex flex-col items-center justify-center">

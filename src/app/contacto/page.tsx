@@ -50,7 +50,7 @@ export default async function Contact() {
                   <ExternalLink color="black" aria-hidden="true" />
                 </Button>
                 <CardHeader>
-                  <CardTitle className="-mt-7 text-center">
+                  <CardTitle className="-mt-8 text-center">
                     <svg
                       role="img"
                       viewBox="0 0 24 24"

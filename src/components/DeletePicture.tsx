@@ -111,10 +111,10 @@ export default function DeletePicture() {
       <h1 className="scroll-m-20 py-5 text-center text-4xl font-extrabold tracking-tight lg:text-5xl">
         Eliminar Imagen
       </h1>
-      <div className="flex h-fit w-fit flex-row flex-wrap justify-center gap-5 rounded-md p-5">
+      <div className="flex h-fit w-min flex-row flex-wrap justify-center gap-5 rounded-md p-5">
         <>
           <Select onValueChange={selectChangeHandler}>
-            <SelectTrigger className="w-[400px]">
+            <SelectTrigger className="w-max">
               <SelectValue placeholder="Seleccione una Categoria" />
             </SelectTrigger>
             <SelectContent>
@@ -174,7 +174,7 @@ export default function DeletePicture() {
                   })}
                 </div>
               ) : (
-                <p>No se encontraron imagenes</p>
+                <p className="text-center">No se encontraron imagenes</p>
               )}
             </>
           )}
