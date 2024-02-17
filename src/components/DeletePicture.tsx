@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/alert-dialog";
 
 import { Card } from "./ui/card";
+import Image from "next/image";
 
 const categories = [
   {
@@ -106,14 +107,14 @@ export default function DeletePicture() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-around">
+    <div className="flex flex-col items-center">
       <h1 className="scroll-m-20 py-5 text-center text-4xl font-extrabold tracking-tight lg:text-5xl">
         Eliminar Imagen
       </h1>
-      <div className="flex h-fit w-fit flex-col items-center gap-5 rounded-md p-5">
+      <div className="flex h-fit w-fit flex-row flex-wrap justify-center gap-5 rounded-md p-5">
         <>
           <Select onValueChange={selectChangeHandler}>
-            <SelectTrigger>
+            <SelectTrigger className="w-[400px]">
               <SelectValue placeholder="Seleccione una Categoria" />
             </SelectTrigger>
             <SelectContent>
@@ -133,18 +134,18 @@ export default function DeletePicture() {
           ) : (
             <>
               {uriList.length ? (
-                <>
+                <div className="flex w-full flex-row flex-wrap justify-center gap-3">
                   {uriList.map((url, i) => {
                     return (
                       <AlertDialog key={i}>
                         <AlertDialogTrigger>
-                          <Card
-                            className="size-40 border-destructive transition-transform duration-500 hover:scale-110 hover:cursor-pointer hover:border-2 hover:shadow-lg hover:shadow-destructive"
-                            style={{
-                              backgroundImage: `url(${url})`,
-                              backgroundSize: "cover",
-                            }}
-                          ></Card>
+                          <Image
+                            src={url}
+                            width={360}
+                            height={1}
+                            alt="Image to delete"
+                            className="rounded-md  border-4 border-destructive transition-transform duration-500 hover:scale-110 hover:cursor-pointer hover:shadow-lg hover:shadow-destructive"
+                          />
                         </AlertDialogTrigger>
                         <AlertDialogContent>
                           <AlertDialogHeader>
@@ -171,7 +172,7 @@ export default function DeletePicture() {
                       </AlertDialog>
                     );
                   })}
-                </>
+                </div>
               ) : (
                 <p>No se encontraron imagenes</p>
               )}

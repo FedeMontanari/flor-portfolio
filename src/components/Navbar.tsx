@@ -111,7 +111,7 @@ export default function Navbar() {
                 <AlertDialog>
                   <AlertDialogTrigger>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} cursor-pointer bg-destructive`}
+                      className={`${navigationMenuTriggerStyle()} cursor-pointer bg-red-400 hover:bg-red-300`}
                     >
                       Cerrar Sesion
                     </NavigationMenuLink>

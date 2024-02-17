@@ -33,8 +33,8 @@ export default function Dashboard() {
     <>
       {!loading ? (
         <div className="mt-12 flex items-center justify-center">
-          <div className="w-max rounded-md border-2 bg-second p-6">
-            <Tabs defaultValue="upload" className="w-[400px]">
+          <div className="flex w-4/5 flex-col items-center rounded-md border-2 bg-second p-6">
+            <Tabs defaultValue="upload" className="flex flex-col items-center">
               <TabsList>
                 <TabsTrigger value="upload">Cargar</TabsTrigger>
                 <TabsTrigger value="delete">Eliminar</TabsTrigger>

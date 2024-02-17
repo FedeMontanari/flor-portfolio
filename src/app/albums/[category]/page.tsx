@@ -1,5 +1,5 @@
-import { Card } from "@/components/ui/card";
 import fetchPictures from "@/utils/fetchPictures";
+import Image from "next/image";
 import React from "react";
 
 export default async function Retratos({
@@ -22,19 +22,25 @@ export default async function Retratos({
           {params.category}
         </h2>
       </div>
-      <div className="grid grid-cols-1 gap-3 pb-12 md:grid-cols-2 lg:grid-cols-4">
-        {imgUrls.map((url, i) => {
-          return (
-            <Card
-              key={i}
-              className="size-80"
-              style={{
-                backgroundImage: `url(${url})`,
-                backgroundSize: "cover",
-              }}
-            ></Card>
-          );
-        })}
+      <div>
+        <ul className="flex flex-wrap justify-center gap-3">
+          {imgUrls.map((url, i) => {
+            return (
+              <li
+                key={i}
+                className="relative h-[300px] transition-transform duration-200 hover:z-50 hover:scale-110 hover:shadow-lg"
+              >
+                <Image
+                  src={url}
+                  alt="Image"
+                  width={360}
+                  height={1}
+                  className="h-full w-full rounded-md object-cover align-middle"
+                />
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );

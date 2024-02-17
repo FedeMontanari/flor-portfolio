@@ -15,10 +15,10 @@ const categories = [
     name: "Fotoproductos",
     href: "fotoproductos",
   },
-  {
-    name: "Retratos",
-    href: "retratos",
-  },
+  // {
+  //   name: "Retratos",
+  //   href: "retratos",
+  // },
   {
     name: "Gastronomía",
     href: "gastronomia",
@@ -37,7 +37,7 @@ export default function Albums() {
           <span className="font-arsenica">trabajos</span>
         </h2>
       </div>
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-wrap justify-center gap-3">
         {categories.map((cat, i) => {
           return (
             <Card
