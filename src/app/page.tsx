@@ -1,19 +1,8 @@
-"use client";
-
-import fetchPictures from "@/utils/fetchPictures";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import pfp from "@/assets/images/florpic.jpg";
 import Link from "next/link";
 
 export default function Home() {
-  const [imgUrls, setImgUrls] = useState<string[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      setImgUrls(await fetchPictures("highlights"));
-    })();
-  }, []);
   return (
     <main className="flex flex-col items-center justify-center">
       <div className="-mt-12 flex h-64 w-screen items-center justify-center">
@@ -23,8 +12,8 @@ export default function Home() {
           <span className="font-arsenica">fotogaleria</span>
         </h2>
       </div>
-      <div className="grid grid-cols-2 items-center gap-3 px-4">
-        <Image src={pfp} alt="Foto de Perfil" className="rounded-lg" />
+      <div className="grid grid-rows-2 items-center gap-3 w-4/5 lg:grid-cols-2 lg:grid-rows-none">
+        <Image src={pfp} alt="Foto de Perfil" className="rounded-lg" priority={true} />
         <p className="text-center text-lg italic text-white">
           ¡Bienvenidos! Gracias por pasar y tomarse el tiempo de venir a mí
           lugar en el mundo. Los invito a conocerme mejor en la sección llamada{" "}

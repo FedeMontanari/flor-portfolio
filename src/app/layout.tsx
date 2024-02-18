@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { Faustina, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
 import localFont from "next/font/local";
-
-import logo from "@/assets/logo/negro.png";
+import Footer from "@/components/Footer";
 
 const faustina = Faustina({ subsets: ["latin"], variable: "--font-faustina" });
 const poppins = Poppins({
@@ -39,9 +37,7 @@ export default function RootLayout({
           <Navbar />
         </div>
         <div>{children}</div>
-        <footer className="mt-16 flex w-full justify-center self-end bg-third">
-          <Image src={logo} alt="Logo" width={360} className="p-2" />
-        </footer>
+        <Footer />
       </body>
     </html>
   );
