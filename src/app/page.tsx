@@ -23,8 +23,8 @@ export default function Home() {
           . En ese espacio les cuento lo que significa para mí el arte de la
           fotografía. <br />
           En la sección{" "}
-          <Link href="/albums" className="text-second">
-            Albums
+          <Link href="/albumes" className="text-second">
+            Albumes
           </Link>{" "}
           podrán observar las distintas áreas a las que me dedico. Cada una de
           ellas está realizada con mucha creatividad y mucho amor para todos

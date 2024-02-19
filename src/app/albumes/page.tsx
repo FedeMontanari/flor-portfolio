@@ -25,7 +25,7 @@ const categories = [
   },
 ];
 
-export default function Albums() {
+export default function Albumes() {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="-mt-12 flex h-64 w-screen items-center justify-center">
@@ -42,7 +42,7 @@ export default function Albums() {
               key={i}
               className="border-none bg-second transition duration-500 hover:bg-third"
             >
-              <Link href={`albums/${cat.href}`}>
+              <Link href={`albumes/${cat.href}`}>
                 <CardHeader>
                   <CardTitle className="text-center">{cat.name}</CardTitle>
                 </CardHeader>

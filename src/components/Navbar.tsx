@@ -31,8 +31,8 @@ const navItems = [
     href: "/",
   },
   {
-    name: "Albums",
-    href: "/albums",
+    name: "Albumes",
+    href: "/albumes",
   },
   {
     name: "Sobre Mi",
