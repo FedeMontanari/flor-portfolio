@@ -12,8 +12,13 @@ export default function Home() {
           <span className="font-arsenica">fotogaleria</span>
         </h2>
       </div>
-      <div className="grid grid-rows-2 items-center gap-3 w-4/5 lg:grid-cols-2 lg:grid-rows-none">
-        <Image src={pfp} alt="Foto de Perfil" className="rounded-lg" priority={true} />
+      <div className="grid w-4/5 grid-rows-2 items-center gap-3 lg:grid-cols-2 lg:grid-rows-none">
+        <Image
+          src={pfp}
+          alt="Foto de Perfil"
+          className="rounded-lg"
+          priority={true}
+        />
         <p className="text-center text-lg italic text-white">
           ¡Bienvenidos! Gracias por pasar y tomarse el tiempo de venir a mí
           lugar en el mundo. Los invito a conocerme mejor en la sección llamada{" "}
@@ -31,9 +36,9 @@ export default function Home() {
           ustedes. <br /> Y por último en la sección{" "}
           <Link href="/contacto" className="text-second">
             Contacto
-          </Link> podrán
-          comunicarse directamente conmigo a través de mis redes, lo que nos
-          permitirá acercarnos para crear momentos increíbles a través de la
+          </Link>{" "}
+          podrán comunicarse directamente conmigo a través de mis redes, lo que
+          nos permitirá acercarnos para crear momentos increíbles a través de la
           fotografía. <br /> Espero que les guste. <br /> ¡Muchas gracias y
           bonito día! <br /> <b>Florencia Elías 📸</b>
         </p>

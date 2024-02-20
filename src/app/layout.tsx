@@ -18,8 +18,9 @@ const arsenica = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Florencia Elias",
-  description: "Portfolio",
+  title: "Florencia Elias Fotografia",
+  description:
+    "Portfolio Fotogalería. Conoce sobre mi, mis trabajos y contactame!",
 };
 
 export default function RootLayout({

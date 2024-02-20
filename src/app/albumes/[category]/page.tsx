@@ -21,8 +21,11 @@ export default async function Categories({
 
   return (
     <div className="flex min-h-screen flex-col items-center">
-      <span className="absolute left-10 top-16 bg-second rounded-lg p-1 hover:cursor-default">
-        <Link href="/albumes" className="text-primary">Albumes</Link> &gt; {camelParam}
+      <span className="absolute left-10 top-16 rounded-lg bg-second p-1 hover:cursor-default">
+        <Link href="/albumes" className="text-primary">
+          Albumes
+        </Link>{" "}
+        &gt; {camelParam}
       </span>
       <div className="-mt-7 flex h-64 w-screen items-center justify-center">
         <h2 className="text-center font-arsenica text-5xl font-bold text-white">
