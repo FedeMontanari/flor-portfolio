@@ -27,10 +27,6 @@ export const metadata: Metadata = {
     icon: "/icons/android-chrome-512x512.png",
     apple: "/icons/apple-touch-icon.png",
   },
-  openGraph: {
-    images: "/icons/android-chrome-512x512.png",
-  },
-  metadataBase: new URL("https://florenciaeliasfotografia.online/"),
 };
 
 export default function RootLayout({
