@@ -23,10 +23,6 @@ export const metadata: Metadata = {
     "Portfolio Fotogalería. Conoce sobre mi, mis trabajos y contactame!",
   authors: [{ name: "Florencia Elias" }],
   creator: "Yaki | Federico Montanari",
-  icons: {
-    icon: "/icons/android-chrome-512x512.png",
-    apple: "/icons/apple-touch-icon.png",
-  },
 };
 
 export default function RootLayout({
