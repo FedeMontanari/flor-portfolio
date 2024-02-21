@@ -19,6 +19,7 @@ export default function PhotoGallery({ urls, ...params }: { urls: string[] }) {
 
   function imageClickHandler(index: number) {
     setShowModal(true);
+    setCurrentUrl(urls[index]);
     setIndex(index);
   }
 
@@ -113,10 +114,9 @@ export default function PhotoGallery({ urls, ...params }: { urls: string[] }) {
         <ChevronLeftCircle
           width={60}
           height={60}
-          className={`invisible absolute left-10 text-white md:visible`}
+          className={`invisible absolute left-10 cursor-pointer text-white md:visible`}
           onClick={() => {
             modalMoveHandler("ArrowLeft");
-            setLoading(true);
           }}
         />
         <ChevronRightCircle
@@ -125,7 +125,6 @@ export default function PhotoGallery({ urls, ...params }: { urls: string[] }) {
           className={`invisible absolute right-10 cursor-pointer text-white md:visible`}
           onClick={() => {
             modalMoveHandler("ArrowRight");
-            setLoading(true);
           }}
         />
       </div>
