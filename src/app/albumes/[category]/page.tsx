@@ -33,7 +33,7 @@ export default async function Categories({
         </h2>
       </div>
       <div>
-        <ul className="flex flex-wrap justify-center gap-3">
+        <ul className="flex flex-wrap justify-center">
           <PhotoGallery urls={imgUrls} />
         </ul>
       </div>
