@@ -1,6 +1,12 @@
 "use client";
 
-import { Loader2, X, ZoomIn } from "lucide-react";
+import {
+  ChevronLeftCircle,
+  ChevronRightCircle,
+  Loader2,
+  X,
+  ZoomIn,
+} from "lucide-react";
 import Image from "next/image";
 import { KeyboardEvent, Suspense, useEffect, useState } from "react";
 import { Button } from "./ui/button";
@@ -102,7 +108,25 @@ export default function PhotoGallery({ urls, ...params }: { urls: string[] }) {
         <Loader2
           width={32}
           height={32}
-          className={`animate-spin ${loading ? "absolute" : "hidden"}`}
+          className={`absolute animate-spin ${loading ? "visible" : "invisible"}`}
+        />
+        <ChevronLeftCircle
+          width={60}
+          height={60}
+          className={`invisible absolute left-10 text-white md:visible`}
+          onClick={() => {
+            modalMoveHandler("ArrowLeft");
+            setLoading(true);
+          }}
+        />
+        <ChevronRightCircle
+          width={60}
+          height={60}
+          className={`invisible absolute right-10 cursor-pointer text-white md:visible`}
+          onClick={() => {
+            modalMoveHandler("ArrowRight");
+            setLoading(true);
+          }}
         />
       </div>
     </>
