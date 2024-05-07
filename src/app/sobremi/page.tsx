@@ -9,7 +9,7 @@ export default async function AboutMe() {
         </h2>
       </div>
       <div className="flex items-center justify-center">
-        <p className="w-3/4 rounded-lg bg-third p-5 text-center text-xl italic leading-7 ">
+        <p className="w-3/4 rounded-lg bg-third p-5 text-center text-lg italic leading-7 md:text-xl">
           Bienvenidos! Mí nombre es Florencia Elías, tengo 27 años y soy oriunda
           de la provincia de Santiago del Estero. <br />
           <br />

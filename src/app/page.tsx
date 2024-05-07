@@ -12,7 +12,7 @@ export default function Home() {
           <span className="font-arsenica">fotogaleria</span>
         </h2>
       </div>
-      <div className="grid w-4/5 grid-rows-2 items-center gap-3 lg:grid-cols-2 lg:grid-rows-none">
+      <div className="flex w-4/5 flex-col items-start gap-3 lg:grid lg:grid-cols-2 lg:grid-rows-none">
         <Image
           src={pfp}
           alt="Foto de Perfil"

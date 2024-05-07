@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Faustina, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -36,6 +37,7 @@ export default function RootLayout({
       className={`${faustina.variable} ${arsenica.variable} ${poppins.variable}`}
     >
       <body className="grid h-fit min-h-screen overflow-x-hidden">
+        <Analytics />
         <div>
           <Navbar />
         </div>
