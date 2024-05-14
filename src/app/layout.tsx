@@ -19,11 +19,13 @@ const arsenica = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Florencia Elias Fotografia",
   description:
     "Portfolio Fotogalería. Conoce sobre mi, mis trabajos y contactame!",
-  authors: [{ name: "Florencia Elias" }],
-  creator: "Yaki | Federico Montanari",
+  metadataBase: new URL("https://florenciaeliasfotografia.online/"),
+  title: {
+    default: "Florencia Elias Fotografía",
+    template: "%s",
+  },
 };
 
 export default function RootLayout({
